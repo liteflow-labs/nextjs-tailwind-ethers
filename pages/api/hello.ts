@@ -5,6 +5,8 @@ type Data = {
   name: string
 }
 
-export default (req: NextApiRequest, res: NextApiResponse<Data>) => {
+const handler = (_: NextApiRequest, res: NextApiResponse<Data>): any => {
   res.status(200).json({ name: 'John Doe' })
 }
+
+export default handler

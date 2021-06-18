@@ -8,7 +8,8 @@
     "prebuild": "npm run clean",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint && npm run lint:prettier",
+    "lint:prettier": "prettier \"{components,pages}/**/*.{ts,tsx}\" --check",
     "format": "prettier \"{components,pages}/**/*.{ts,tsx}\" -w"
   },
   "dependencies": {

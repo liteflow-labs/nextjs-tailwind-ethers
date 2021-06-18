@@ -8,8 +8,9 @@
     "prebuild": "npm run clean",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "format": "prettier \"{components,pages}/**/*.{ts,tsx}\" -w"
+    "lint": "next lint && npm run prettier -- --check",
+    "format": "npm run prettier -- -w",
+    "prettier": "prettier \"{components,pages}/**/*.{ts,tsx}\""
   },
   "dependencies": {
     "@headlessui/react": "^1.2.0",

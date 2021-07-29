@@ -62,7 +62,7 @@ export default function Home(): JSX.Element {
         <title>{appTitle('Home')}</title>
       </Head>
       {!active ? (
-        <Layout className="flex">
+        <Layout className="flex flex-grow">
           <div className="flex flex-1 items-center justify-center">
             <div className="text-center">
               <svg
@@ -202,7 +202,7 @@ export default function Home(): JSX.Element {
                       <tbody className="bg-white divide-y divide-gray-200">
                         {chains.map((chain) => (
                           <tr key={chain.chainId} className="bg-white">
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            <td className="px-6 py-4 whitespace-nowrap overflow-ellipsis text-sm text-gray-900">
                               <div className="flex">
                                 <a
                                   href={chain.infoURL}
@@ -220,7 +220,7 @@ export default function Home(): JSX.Element {
                                 </a>
                               </div>
                             </td>
-                            <td className="hidden px-6 py-4 whitespace-nowrap text-sm text-gray-500 lg:block">
+                            <td className="hidden px-6 py-4 whitespace-nowrap overflow-ellipsis text-sm text-gray-500 lg:block">
                               <span
                                 className={classNames(
                                   statusStyles[chain.chain],
@@ -230,7 +230,7 @@ export default function Home(): JSX.Element {
                                 {chain.chain}
                               </span>
                             </td>
-                            <td className="max-w-0 w-full px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
+                            <td className="max-w-0 w-full px-6 py-4 text-right whitespace-nowrap overflow-ellipsis text-sm text-gray-500">
                               <span className="text-gray-900 font-medium">
                                 {chain.chainId in wallets
                                   ? wallets[chain.chainId]
@@ -238,7 +238,7 @@ export default function Home(): JSX.Element {
                               </span>
                               {chain.nativeCurrency.symbol}
                             </td>
-                            <td className="hidden px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500 lg:block">
+                            <td className="hidden px-6 py-4 text-right whitespace-nowrap overflow-ellipsis text-sm text-gray-500 lg:block">
                               {account && (
                                 <ExplorerLink
                                   chain={chain}

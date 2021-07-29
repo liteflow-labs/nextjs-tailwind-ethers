@@ -201,19 +201,19 @@ export default function SmartContract(): JSX.Element {
                     <tbody className="bg-white divide-y divide-gray-200">
                       {abi.map((item) => (
                         <tr key={item.name} className="bg-white">
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                          <td className="px-6 py-4 whitespace-nowrap overflow-ellipsis text-sm text-gray-900">
                             <div className="flex">
                               <p className="text-gray-900 font-medium">
                                 {item.name}
                               </p>
                             </div>
                           </td>
-                          <td className="hidden px-6 py-4 whitespace-nowrap text-sm text-gray-500 lg:block">
+                          <td className="hidden px-6 py-4 whitespace-nowrap overflow-ellipsis text-sm text-gray-500 lg:block">
                             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium capitalize bg-green-100 text-green-800">
                               {item.type}
                             </span>
                           </td>
-                          <td className="max-w-0 w-full px-6 py-4 text-right whitespace-nowrap text-sm text-gray-500">
+                          <td className="max-w-0 w-full px-6 py-4 text-right whitespace-nowrap overflow-ellipsis text-sm text-gray-500">
                             <span className="text-gray-900 font-medium">
                               {item.name ? values[item.name] : ''}
                             </span>

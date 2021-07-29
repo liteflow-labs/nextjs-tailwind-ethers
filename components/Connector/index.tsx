@@ -3,7 +3,13 @@ import type { ProviderWhitelist } from '../../hooks/useDApp'
 import useDApp from '../../hooks/useDApp'
 import WalletModal from '../WalletModal'
 
-export default function Connector(): JSX.Element {
+type Props = {
+  Label?: () => JSX.Element
+}
+
+export default function Connector({
+  Label = () => <span>Connect your wallet</span>,
+}: Props): JSX.Element {
   const [showModal, setModal] = useState(false)
   const { connectWithProvider } = useDApp()
 
@@ -22,7 +28,7 @@ export default function Connector(): JSX.Element {
         className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
         onClick={() => setModal(true)}
       >
-        Connect your wallet
+        <Label />
       </button>
       <WalletModal
         open={showModal}
